@@ -9,27 +9,33 @@ var questions = [{
     question: "What year did the events of the first Bioshock game happen?",
     answerList: ["1960","1968","1957","1962"],
     answer: 0
-},{
+},
+{
     question: "What is the name of the Little Sister protector?",
     answerList: ["Low Diver", "Delta Series", "Big Daddy", "Leather Golem"],
     answer: 2
-},{
+},
+{
     question: "Splicer's got their name because of their addiction to?",
     answerList: ["Plasmids", "Adam", "Eve", "Movies"],
     answer: 1
-},{
+},
+{
     question: "Who is the founder of Rapture?",
     answerList: ["Julie Langford", "Handsome Jack", "Andrew Ryan", "Frank Fontaine"],
     answer: 2
-},{
+},
+{
     question: "What was the first Plasmid you received?",
     answerList: ["Electro Bolt", "Incinerate", "Insect Swarm", "Winter Blast"],
     answer: 0
-},{
+},
+{
     question: "Bioshock is greatly infuenced by what philosophy?",
     answerList: ["Taoism", "Marxism", "Nihilism" ,"Objectivism"],
     answer: 3
-},{
+},
+{
     question: "Rapture is a city located?",
     answerList: ["Under the sea", "In the sky", "Deep underground", "In space"],
     answer: 0
@@ -55,7 +61,7 @@ $("#start").on("click", function(){
     $("#answer3").html("<input type = 'radio' name = 'answer3' value = '0'>" + "<label>" + questions[2].answerList[0] + "</label>" + 
     "<input type = 'radio' name = 'answer3' value='0'>" + "<label>" + questions[2].answerList[1] + "</label>" +
     "<input type = 'radio' name = 'answer3' value='0'>" + "<label>" + questions[2].answerList[2] + "</label>" +
-    "<input type = 'radio' name = 'answer3' value='0'>" + "<label>" + questions[2].answerList[3] + "</label><br>"
+    "<input type = 'radio' name = 'answer3' value='0'>" + "<label>" + questions[2].answerList[3] + "</label><br><br>"
     );
     $("#question4").html("<h3>" + questions[3].question + "</h3>");
     $("#answer4").html("<input type = 'radio' name = 'answer4' value = '0'>" + "<label>" + questions[3].answerList[0] + "</label>" + 
@@ -82,6 +88,12 @@ $("#start").on("click", function(){
     "<input type = 'radio' name = 'answer7' value='0'>" + "<label>" + questions[6].answerList[3] + "</label><br><br>"
     );
 
+    $("#submit").html("<button id = 'done' class='btn'>Done</button>");
+
+    $("#done").on("click", function() {
+        keepingScore();
+        displayResult();
+    });
 });
 
 function run() {
@@ -95,6 +107,7 @@ function decrement() {
 
     if (number === 0) {
         stop();
+        keepingScore();
         displayResult();
     }
 }
@@ -127,6 +140,84 @@ function displayResult() {
     $("#unanswered").html("unanswered: " + unanswered);
 }
 
-function keepingScore() {}
+function keepingScore() {
+    var userChoice1 = $("input[name='answer1']:checked").val();
+    var userChoice2 = $("input[name='answer2']:checked").val();
+    var userChoice3 = $("input[name='answer3']:checked").val();
+    var userChoice4 = $("input[name='answer4']:checked").val();
+    var userChoice5 = $("input[name='answer5']:checked").val();
+    var userChoice6 = $("input[name='answer6']:checked").val();
+    var userChoice7 = $("input[name='answer7']:checked").val();
+
+    if (userChoice1 === undefined) {
+        unanswered++;
+    }
+    else if (userChoice1 == questions[0].answer) {
+        correctAnswers++;
+    }
+    else {
+        incorrectAnswers++
+    }
+
+    if (userChoice2 === undefined) {
+        unanswered++;
+    }
+    else if (userChoice2 == questions[1].answer) {
+        correctAnswers++;
+    }
+    else {
+        incorrectAnswers++
+    }
+
+    if (userChoice3 === undefined) {
+        unanswered++;
+    }
+    else if (userChoice3 == questions[2].answer) {
+        correctAnswers++;
+    }
+    else {
+        incorrectAnswers++
+    }
+
+    if (userChoice4 === undefined) {
+        unanswered++;
+    }
+    else if (userChoice4 == questions[3].answer) {
+        correctAnswers++;
+    }
+    else {
+        incorrectAnswers++
+    }
+
+    if (userChoice5 === undefined) {
+        unanswered++;
+    }
+    else if (userChoice5 == questions[4].answer) {
+        correctAnswers++;
+    }
+    else {
+        incorrectAnswers++
+    }
+
+    if (userChoice6 === undefined) {
+        unanswered++;
+    }
+    else if (userChoice6 == questions[5].answer) {
+        correctAnswers++;
+    }
+    else {
+        incorrectAnswers++
+    }
+
+    if (userChoice7 === undefined) {
+        unanswered++;
+    }
+    else if (userChoice7 == questions[6].answer) {
+        correctAnswers++;
+    }
+    else {
+        incorrectAnswers++
+    }
+}
 
 //maybe implement a reset
