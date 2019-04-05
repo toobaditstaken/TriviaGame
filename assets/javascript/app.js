@@ -93,13 +93,39 @@ function decrement() {
     number--;
     $("#time").html("<h2>Time Remaining: " + number + " Seconds</h2>" + "<br>")
 
+    if (number === 0) {
+        stop();
+        displayResult();
+    }
 }
 
 function stop() {
     clearInterval(intervalId);
 }
 
-function displayResult() {}
+function displayResult() {
+    $("#time").hide();
+    $("#question1").hide();
+    $("#question2").hide();
+    $("#question3").hide();
+    $("#question4").hide();
+    $("#question5").hide();
+    $("#question6").hide();
+    $("#question7").hide();
+    $("#answer1").hide();
+    $("#answer2").hide();
+    $("#answer3").hide();
+    $("#answer4").hide();
+    $("#answer5").hide();
+    $("#answer6").hide();
+    $("#answer7").hide();
+    $("#submit").hide();
+
+    $("#resultsMessage").html("<h2>A man choses, A slave obeys.</h2>");
+    $("#correct").html("Correct answers: " + correctAnswers);
+    $("#incorrect").html("Incorrect answers: " + incorrectAnswers);
+    $("#unanswered").html("unanswered: " + unanswered);
+}
 
 function keepingScore() {}
 
