@@ -38,7 +38,7 @@ var questions = [{
 $("#start").on("click", function(){
     $(this).hide();
     $("#time").html("<h2>Time Remaining: 30 Seconds</h2>" + "<br>");
-    
+    run();
     $("#question1").html("<h3>" + questions[0].question + "</h3>");
     $("#answer1").html("<input type = 'radio' name = 'answer1' value = '0'>" + "<label>" + questions[0].answerList[0] + "</label>" + 
     "<input type = 'radio' name = 'answer1' value='0'>" + "<label>" + questions[0].answerList[1] + "</label>" +
@@ -84,11 +84,20 @@ $("#start").on("click", function(){
 
 });
 
-function run() {}
+function run() {
+    clearInterval(intervalId);
+    intervalId = setInterval(decrement, 1000)
+}
 
-function decrement() {}
+function decrement() {
+    number--;
+    $("#time").html("<h2>Time Remaining: " + number + " Seconds</h2>" + "<br>")
 
-function stop() {}
+}
+
+function stop() {
+    clearInterval(intervalId);
+}
 
 function displayResult() {}
 
