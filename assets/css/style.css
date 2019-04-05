@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    font-family: Didot, serif;
+    font-size: 18px;
+    line-height: 24px;
+    background: url("../images/background.jpeg")
+}
+
+.container {
+    text-align: center;
+    margin: 0 15%;
+    padding: 10px;
+    background: #8b5d2e;
+}
+
+.main-content {
+    padding: 5% 0;
+}
+
+h1 {
+    margin: 35px 0 0 0;
+    text-align: center;
+    font-family: Impact, fantasy;
+    font-size: 50px;
+    line-height: 50px;
+}
+
+.btn {
+    padding: 15px 75px;
+    font-size: 20px;
+    background: #aaaaaa;
+    border: 2px solid #000000;
+}
