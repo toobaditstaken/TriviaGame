@@ -34,3 +34,17 @@ var questions = [{
     answerList: ["Under the sea", "In the sky", "Deep underground", "In space"],
     answer: 0
 }];
+
+$("#start").on("click", function(){})
+
+function run() {}
+
+function decrement() {}
+
+function stop() {}
+
+function displayResult() {}
+
+function keepingScore() {}
+
+//maybe implement a reset
