@@ -10,7 +10,7 @@ The TriviaGame theme is the video game series Bioshock.
 
   * Access the website by starting the HTML file in you cloned repository or click the hosted website link.
   
-  * Begin pressing the start button.
+  * Begin by pressing the start button.
   
   * Once started a timer will begin to countdown and you will need to click on the answers of each question.
 
